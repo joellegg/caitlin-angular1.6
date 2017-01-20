@@ -5,7 +5,11 @@ app.factory('varFactory', function() {
     return {
         //getter
         getThatVar: () => {
-            return "this dang var"
+            if (bologna) {
+                return bologna
+            } else {
+                return "no bologna for you"
+            }
         },
 
         //setter

@@ -1,11 +1,9 @@
-app.controller('ListCtrl', function($scope, $http, varFactory) {
+app.controller('ListCtrl', function($scope, $http, varFactory, listFactory) {
     console.log("This is the mothertricking list app.");
 
-    $http.get(`list.json`)
-    .then((anything) => {
-        console.log('the anything', anything);
-        $scope.list = anything.data.list;
+    listFactory.getList()
+    .then((val) => {
+        console.log('val from listCtrl', val);
+        $scope.list = val;
     })
-
-    $scope.factoryThing = varFactory.setThatVar();
 })

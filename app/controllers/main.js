@@ -10,5 +10,6 @@ app.controller('MainCtrl', function($scope, varFactory) {
     $scope.setter = (newVal)=> {
         console.log('this is a turtle, I got the newVal', newVal)
         varFactory.setThatVar(newVal)
+        $scope.thingFromFactory = newVal;
     }
 })
